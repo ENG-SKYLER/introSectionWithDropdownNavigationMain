@@ -1,0 +1,136 @@
+@use "../util/indexutil" as *;
+header {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.burger-menu {
+  width: rem(32);
+  height: rem(18);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  &.clicked {
+    span {
+      &:first-child {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        top: rem(8);
+        opacity: 0;
+      }
+      &:last-child {
+        top: rem(16);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  span {
+    background-color: black;
+    height: rem(2);
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s ease;
+    transform-origin: 15%;
+    &:first-child {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: rem(8);
+    }
+    &:last-child {
+      top: rem(16);
+    }
+  }
+}
+ul,
+li {
+  list-style-type: none;
+}
+p {
+  margin-bottom: 0;
+}
+.navigation {
+  &.block {
+    display: block;
+  }
+  display: none;
+  position: absolute;
+  background-color: indianred;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 64%;
+  > ul {
+    margin-top: 83px;
+    padding: 0;
+    padding-left: 25px;
+    li {
+      &:not(:first-child) {
+        margin-top: rem(30);
+      }
+
+      &:first-child {
+        img {
+          margin-left: rem(10);
+        }
+        ul {
+          margin: rem(20) 0;
+          display: none;
+          cursor: pointer;
+
+          > li {
+            &:not(:first-child) {
+              margin-top: rem(10);
+            }
+            .items {
+              position: relative;
+              display: grid;
+              grid-gap: rem(10);
+              grid-template-columns: auto 1fr;
+              grid-template-rows: auto auto;
+              transition: all 0.3s ease;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        img {
+          margin-left: rem(10);
+        }
+        ul {
+          display: none;
+          transition: all 0.5s ease;
+          li {
+            margin-top: 25px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.login_details {
+  margin-top: rem(50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    border: none;
+    background: none;
+    color: $black;
+    &:last-child {
+      margin-top: rem(16);
+      border: rem(1) solid $black;
+      width: rem(196);
+      padding: rem(12) rem(70);
+      border-radius: rem(15);
+    }
+  }
+}
