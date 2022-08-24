@@ -6,13 +6,19 @@ header {
 .header {
   display: flex;
   justify-content: space-between;
+  @include breakpoint(large) {
+  }
 }
 .burger-menu {
+  @include breakpoint("large") {
+    display: none;
+    visibility: hidden;
+  }
   width: rem(32);
   height: rem(18);
   cursor: pointer;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   &.clicked {
     span {
       &:first-child {
@@ -55,12 +61,17 @@ p {
   margin-bottom: 0;
 }
 .navigation {
+  @include breakpoint(large) {
+    position: static;
+    display: grid;
+  }
   &.block {
     display: block;
   }
+  z-index: 2;
   display: none;
   position: absolute;
-  background-color: indianred;
+  background-color: $white;
   right: 0px;
   top: 0;
   height: 100%;
@@ -70,13 +81,24 @@ p {
     padding: 0;
     padding-left: 25px;
     li {
+      @include breakpoint(large) {
+        display: inline-grid;
+        justify-content: space-between;
+      }
       &:not(:first-child) {
         margin-top: rem(30);
       }
 
       &:first-child {
+        &.rot {
+          img {
+            transform: rotate(180deg);
+          }
+        }
         img {
+          cursor: pointer;
           margin-left: rem(10);
+          margin-bottom: 0.15rem;
         }
         ul {
           margin: rem(20) 0;
@@ -100,7 +122,9 @@ p {
       }
       &:nth-child(2) {
         img {
+          cursor: pointer;
           margin-left: rem(10);
+          margin-bottom: 0.15rem;
         }
         ul {
           display: none;
@@ -116,6 +140,9 @@ p {
 }
 
 .login_details {
+  @include breakpoint(large) {
+    flex-direction: row;
+  }
   margin-top: rem(50);
   display: flex;
   flex-direction: column;
@@ -132,5 +159,31 @@ p {
       padding: rem(12) rem(70);
       border-radius: rem(15);
     }
+  }
+}
+.background {
+  @include breakpoint(large) {
+    display: none;
+    visibility: hidden;
+  }
+  &.back {
+    z-index: 0;
+    opacity: 0.6;
+    background-color: $gray;
+  }
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: $white;
+  z-index: -1;
+}
+
+.bl {
+  display: block !important;
+}
+.rot {
+  img {
+    transform: rotate(180deg);
   }
 }

@@ -1,13 +1,14 @@
 // 700px , 900px , 1440px;
+@use "functions" as *;
 $breakpoints-up: (
-  "medium": 43.75em,
-  "large": 56.25em,
-  "xlarge": 90em,
+  "medium": em(700),
+  "large": em(800),
+  "xlarge": em(1440),
 );
 $breakpoints-down: (
-  "small": 43.7485em,
-  "medium": 56.24875em,
-  "large": 89.99875em,
+  "small": em(699),
+  "medium": em(799),
+  "large": em(1399),
 );
 
 @mixin breakpoint($size) {

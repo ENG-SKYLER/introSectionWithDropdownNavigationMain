@@ -1,6 +1,12 @@
 @use "../util/indexutil" as *;
 
 .container {
+  @include breakpoint(large) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: rem(1360);
+    margin: rem(21);
+  }
   width: 91%;
   margin: rem(25) auto;
 }
