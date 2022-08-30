@@ -1,3 +1,4 @@
+//js for burger menu toggle
 const burger = document.querySelector(".burger-menu");
 const navigation = document.querySelector(".navigation");
 const back = document.querySelector(".background");
@@ -17,3 +18,5 @@ comp.addEventListener("click", () => {
   nav[1].classList.toggle("bl");
   comp.classList.toggle("rot");
 });
+
+//js toggle for dropdown menu in medium and large screens

@@ -2,11 +2,11 @@
 
 .container {
   @include breakpoint(large) {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    // display: grid;
+    // grid-template-columns: auto 1fr;
     width: rem(1360);
-    margin: rem(21);
+    margin: rem(21) auto 0;
   }
-  width: 91%;
-  margin: rem(25) auto;
+  width: 91.7%;
+  margin: rem(24) auto 0;
 }

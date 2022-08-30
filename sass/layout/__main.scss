@@ -1,0 +1,83 @@
+@use "./sass/util/indexutil" as *;
+main {
+  margin-top: rem(24);
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(large) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: auto;
+    margin: rem(58) auto;
+    justify-content: space-between;
+  }
+  .main__image {
+    @include breakpoint(large) {
+      order: 2;
+      background-image: url("/images/image-hero-desktop.png");
+      background-size: contain;
+      background-position: center;
+      height: rem(640);
+    }
+    background-image: url(/images/image-hero-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: rem(282);
+  }
+  .info {
+    @include breakpoint(large) {
+      width: auto;
+      margin: 0;
+      margin-top: rem(103);
+      padding-left: rem(165);
+    }
+    width: 91.7%;
+    margin: rem(30) auto 0;
+    h1 {
+      @include breakpoint(large) {
+        text-align: left;
+        font-size: rem(81);
+      }
+      text-align: center;
+    }
+    p {
+      @include breakpoint(large) {
+        text-align: left;
+        font-size: rem(19);
+      }
+      color: $gray;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .btn {
+      @include breakpoint(large) {
+        text-align: left;
+      }
+      text-align: center;
+      margin-top: rem(28);
+      button {
+        &:hover {
+          background-color: $white;
+          color: $black;
+        }
+        border: 1px solid $black;
+        padding: rem(16) rem(21) rem(18) rem(25);
+        border-radius: rem(15);
+        color: $white;
+        background-color: $black;
+      }
+    }
+    .logos {
+      @include breakpoint(large) {
+        margin-top: rem(107);
+      }
+      margin-top: rem(20);
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: rem(70);
+        height: 100%;
+      }
+    }
+  }
+}
