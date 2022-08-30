@@ -685,7 +685,7 @@ main {
   }
 }
 main .main__image {
-  background-image: url("./images/image-hero-mobile.png");
+  background-image: url(./images/image-hero-mobile.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -696,7 +696,7 @@ main .main__image {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
-    background-image: url("./images/image-hero-desktop.png");
+    background-image: url(./images/image-hero-desktop.png);
     background-size: contain;
     background-position: center;
     height: 40rem;
